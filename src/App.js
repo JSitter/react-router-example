@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+import Bompy from './Bompy';
+import Compy from './Compy';
+import Funscape from './Funscape';
 
 class App extends Component {
   render() {
@@ -11,14 +15,12 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Link to="/lumpy">Click here for Awesome!</Link>
+          <Link to="/compy">Click for More Awesomenett</Link>
+          <Link to="/lumpy/duckling">Fun times!</Link>
+          <Route exact path="/lumpy" component={Bompy} />
+          <Route path="/compy" component={Compy} />
+          <Route exact path="/lumpy/duckling" component={Funscape} />
         </header>
       </div>
     );
